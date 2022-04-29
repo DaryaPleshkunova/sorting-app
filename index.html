@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Список студентов</title>
+
+  <link rel="stylesheet" href="normalize.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+
+  <script defer src="main.js"></script>
+</head>
+<body class="body">
+  <main class="container">
+    <h1>Список студентов</h1>
+    <form id="add-form" class="add-form form-inline" action="#">
+      <div class="form-group">
+        <label>
+          Имя
+          <input id="student-name-input" class="form-control" type="text">
+          <span class="text-danger"></span>
+        </label>
+
+        <label>
+          Фамилия
+          <input id="student-last-name-input" class="form-control" type="text">
+          <span class="text-danger"></span>
+        </label>
+
+        <label>
+          Отчество
+          <input id="student-second-name-input" class="form-control input-sm" type="text">
+          <span class="text-danger"></span>
+        </label>
+      </div>
+
+      <div class="form-group">
+        <label>
+          Дата рождения
+          <input id="student-birth-date-input" class="form-control" type="date" min="1900-01-01">
+          <span class="text-danger"></span>
+        </label>
+
+        <label>
+          Год начала обучения
+          <input id="student-enter-year-input" class="form-control" type="number" min="2000">
+          <span class="text-danger"></span>
+        </label>
+
+        <label>
+          Факультет
+          <input id="student-department-input" class="form-control" type="text">
+          <span class="text-danger"></span>
+        </label>
+      </div>
+
+      <button id="submit-button" class="btn btn-primary" type="submit">Добавить</button>
+    </form>
+
+    <div class="filters">
+      <h2 id="filters-heading" class="filters-heading clickable">Фильтры</h2>
+
+      <div id="filters-wrapper" class="form-group filters-wrapper">
+        <label>
+          ФИО
+          <input id="name-filter-input" class="form-control filter-input" type="text">
+        </label>
+
+        <label>
+          Факультет
+          <input id="department-filter-input" class="form-control filter-input" type="text">
+        </label>
+
+        <label>
+          Год начала обучения
+          <input id="enter-year-filter-input" class="form-control filter-input" type="number" min="2000">
+        </label>
+
+        <label>
+          Год окончания обучения
+          <input id="finish-year-filter-input" class="form-control filter-input" type="number" min="2000">
+        </label>
+      </div>
+    </div>
+
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th id="name-column-heading" class="clickable">ФИО студента</th>
+          <th id="department-heading" class="clickable">Факультет</th>
+          <th id="birth-date-heading" class="clickable">Дата рождения</th>
+          <th id="study-years-heading" class="clickable">Годы обучения</th>
+        </tr>
+      </thead>
+      <tbody id="table-body">
+      </tbody>
+    </table>
+  </main>
+</body>
+</html>
